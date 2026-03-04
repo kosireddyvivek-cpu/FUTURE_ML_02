@@ -216,3 +216,22 @@ Possible improvements include:
 - Real-time ticket prediction API
 
 ---
+## Model Predictions
+
+![Prediction Output](<img width="1003" height="353" alt="Model Prediction" src="https://github.com/user-attachments/assets/0de8fa35-e16a-4062-b324-16916630cc40" />
+)
+
+## Classification Report
+
+![Category Results](<img width="1036" height="350" alt="Classification report" src="https://github.com/user-attachments/assets/e0f6db4a-618b-4dbc-9125-aa30ebc3ede9" />
+)
+
+## Priority Classification
+
+![Priority Results](<img width="1036" height="366" alt="Priority Classification" src="https://github.com/user-attachments/assets/8b55dd96-b776-47ee-a463-1411f3286e9c" />
+)
+
+## Confusion Matrix
+
+![Confusion Matrix](<img width="744" height="580" alt="Confusion matrix" src="https://github.com/user-attachments/assets/64a8ee37-1e94-4aab-9ea3-942a8f34d4af" />
+)
