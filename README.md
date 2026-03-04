@@ -1,237 +1,287 @@
-# Support Ticket Classification System (NLP + Machine Learning)
+Support Ticket Classification System (NLP + Machine Learning)
+Overview
 
-## Overview
-Customer support teams often receive hundreds or thousands of support tickets every day through emails, forms, and helpdesk systems. Manually sorting these tickets into categories and identifying urgent issues can slow down response time.
+Customer support teams receive hundreds or thousands of tickets every day through emails, helpdesk systems, and support forms. Manually sorting these tickets into categories and identifying urgent issues slows down response time and increases workload for support teams.
 
-This project builds a **Machine Learning based Support Ticket Classification System** that automatically:
+This project builds a Machine Learning–based Support Ticket Classification System that automatically:
 
-- Reads customer support ticket text
-- Classifies tickets into categories
-- Assigns a priority level
-- Helps support teams respond faster and reduce backlog
+Reads customer support ticket text
 
-This system acts as a **decision-support tool for businesses**, improving operational efficiency and customer satisfaction.
+Classifies tickets into categories
 
----
+Assigns a priority level
 
-## Problem Statement
+Helps support teams respond faster and reduce backlog
+
+The system acts as a decision-support tool for businesses, improving operational efficiency and customer satisfaction.
+
+Problem Statement
+
 In real-world support systems:
 
-- Tickets are often **not categorized properly**
-- **Urgent issues may get delayed**
-- Support teams spend time **sorting instead of solving problems**
+Tickets are often not categorized properly
 
-This project solves these problems by automatically classifying and prioritizing support tickets using **Natural Language Processing (NLP)** and **Machine Learning**.
+Urgent issues may get delayed
 
----
+Support teams spend time sorting instead of solving problems
 
-## Dataset
-Dataset used: **Customer Support Ticket Dataset**
+This project addresses these problems by automatically classifying and prioritizing support tickets using Natural Language Processing (NLP) and Machine Learning.
 
-The dataset contains support ticket information including:
+Dataset
 
-- Ticket Subject
-- Ticket Description
-- Ticket Type (Category)
-- Ticket Priority
-- Customer information
-- Resolution details
+Dataset used: Customer Support Ticket Dataset
 
-Total records: **8469 support tickets**
+The dataset contains support ticket information such as:
 
-For this project, the important columns used are:
+Ticket Subject
 
-- **Ticket Subject**
-- **Ticket Description**
-- **Ticket Type**
-- **Ticket Priority**
+Ticket Description
 
----
+Ticket Type (Category)
 
-## Machine Learning Pipeline
+Ticket Priority
+
+Customer Information
+
+Resolution Details
+
+Total records:
+
+8469 support tickets
+
+For this project, the main columns used were:
+
+Ticket Subject
+
+Ticket Description
+
+Ticket Type
+
+Ticket Priority
+
+Machine Learning Pipeline
 
 The system follows the pipeline below:
 
-Support Ticket Text  
-→ Text Cleaning  
-→ Feature Extraction (TF-IDF)  
-→ Machine Learning Model  
-→ Category Prediction  
-→ Priority Prediction  
+Support Ticket Text
+        ↓
+Text Cleaning
+        ↓
+Feature Extraction (TF-IDF)
+        ↓
+Machine Learning Model
+        ↓
+Category Prediction
+        ↓
+Priority Prediction
+Key Features Implemented
+Text Cleaning
 
----
+Lowercasing
 
-## Key Features Implemented
+Stopword removal
 
-✔ Text cleaning  
-- Lowercasing  
-- Stopword removal  
-- Punctuation removal  
+Punctuation removal
 
-✔ Feature extraction  
-- TF-IDF Vectorization
+Feature Extraction
 
-✔ Ticket category classification
+TF-IDF Vectorization
 
-✔ Priority prediction (High / Medium / Low)
+Machine Learning Tasks
 
-✔ Model evaluation using ML metrics
+Ticket category classification
 
-Bonus:
+Priority prediction (High / Medium / Low)
 
-✔ Confusion matrix visualization  
-✔ Class-wise performance analysis
+Model Evaluation
 
----
+Accuracy
 
-## How Tickets Are Categorized
+Precision
 
-The ticket **subject and description** are combined into a single text input.
+Recall
 
-Example:
+F1-score
 
-Ticket Subject:  
-`Payment issue`
+Bonus
 
-Ticket Description:  
-`My payment was deducted twice`
+Confusion matrix visualization
 
-Combined text:
+Class-wise performance analysis
 
-`payment issue my payment was deducted twice`
+How Tickets Are Categorized
 
-The system processes the text using NLP techniques and converts it into numerical features using **TF-IDF**.
+The ticket subject and description are combined into a single input text.
 
-A **Logistic Regression classification model** is trained on historical ticket data to predict the **ticket category**.
+Example
 
-Example output:
+Ticket Subject:
 
-Input Ticket:  
-`My payment was deducted twice`
+Payment issue
 
-Predicted Category:  
-`Billing`
+Ticket Description:
 
----
+My payment was deducted twice
 
-## How Priority Is Decided
+Combined text used for the model:
 
-The dataset includes a **Ticket Priority column** which contains labels such as:
+payment issue my payment was deducted twice
 
-- High
-- Medium
-- Low
+The text is processed using NLP preprocessing techniques, then converted into numerical features using TF-IDF Vectorization.
 
-A second machine learning model is trained to predict the **priority level** of new support tickets based on the ticket text.
+A Logistic Regression classification model is trained on historical ticket data to predict the ticket category.
 
-Example:
+Example Prediction
 
-Input Ticket:  
-`Unable to login to my account`
+Input Ticket:
 
-Predicted Priority:  
-`High`
+My payment was deducted twice
 
-This helps support teams quickly identify **urgent issues**.
+Predicted Category:
 
----
+Cancellation request
+How Priority Is Decided
 
-## Model Evaluation
+The dataset includes a Ticket Priority column with labels such as:
+
+High
+
+Medium
+
+Low
+
+Critical
+
+A second machine learning model is trained to predict the priority level of new tickets based on ticket text.
+
+Example
+
+Input Ticket:
+
+Unable to login to my account
+
+Predicted Priority:
+
+High
+
+This allows support teams to identify urgent issues quickly.
+
+Model Evaluation
 
 The model performance is evaluated using standard machine learning metrics:
 
-- Accuracy
-- Precision
-- Recall
-- F1-score
-- Confusion Matrix
+Accuracy
 
-These metrics help measure how well the model classifies support tickets and predicts priority levels.
+Precision
 
----
+Recall
 
-## Example Prediction
+F1-score
+
+Confusion Matrix
+
+These metrics measure how effectively the model classifies support tickets and predicts priority levels.
+
+Example Prediction
 
 Example input ticket:
 
-`How do I reset my password?`
+How do I reset my password?
 
 Output:
 
-Category: Account  
+Category: Billing inquiry
 Priority: Medium
+Business Impact
 
----
+This system helps companies:
 
-## Business Impact
+Automatically route support tickets to the correct team
 
-This system can help companies:
+Identify urgent issues faster
 
-- Automatically route support tickets to the correct team
-- Detect urgent issues earlier
-- Reduce manual ticket sorting
-- Improve customer response times
-- Increase customer satisfaction
+Reduce manual ticket sorting workload
 
-This makes the system useful for **SaaS companies, IT support teams, and customer service platforms**.
+Improve response time
 
----
+Increase customer satisfaction
 
-## Technologies Used
+This solution can be applied in:
 
-- Python
-- Natural Language Processing (NLTK)
-- Scikit-learn
-- TF-IDF Vectorization
-- Logistic Regression
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
+SaaS companies
 
----
+IT support teams
 
-## Why This Project Matters
+Helpdesk platforms
 
-By building this project, I gained experience in:
+Customer service operations
 
-- Real-world NLP pipelines
-- Text preprocessing techniques
-- Machine learning classification
-- Operational ML use cases
-- Building ML systems that support business decisions
+Technologies Used
 
-Most beginner ML projects use toy datasets.  
-This project demonstrates how machine learning can be used to **optimize real customer support workflows**.
+Python
 
----
+Natural Language Processing (NLTK)
 
-## Future Improvements
+Scikit-learn
+
+TF-IDF Vectorization
+
+Logistic Regression
+
+Pandas
+
+NumPy
+
+Matplotlib
+
+Seaborn
+
+Why This Project Matters
+
+Through this project, I gained hands-on experience in:
+
+Real-world NLP pipelines
+
+Text preprocessing techniques
+
+Machine learning classification
+
+Operational ML use cases
+
+Building ML systems that support business decisions
+
+Many beginner ML projects use toy datasets.
+This project demonstrates how machine learning can optimize real customer support workflows.
+
+Future Improvements
 
 Possible improvements include:
 
-- Deep Learning models (LSTM / Transformers)
-- BERT-based text classification
-- Web interface using Flask
-- Real-time ticket prediction API
+Deep Learning models (LSTM / Transformers)
 
----
+BERT-based text classification
+
+Web interface using Flask
+
+Real-time ticket prediction API
 ## Model Predictions
 
-![Prediction Output](<img width="1003" height="353" alt="Model Prediction" src="https://github.com/user-attachments/assets/0de8fa35-e16a-4062-b324-16916630cc40" />
-)
+![Prediction Output](Model%20Prediction.png)
+
+---
 
 ## Classification Report
 
-![Category Results](<img width="1036" height="350" alt="Classification report" src="https://github.com/user-attachments/assets/e0f6db4a-618b-4dbc-9125-aa30ebc3ede9" />
-)
+![Category Results](Classification%20report.png)
+
+---
 
 ## Priority Classification
 
-![Priority Results](<img width="1036" height="366" alt="Priority Classification" src="https://github.com/user-attachments/assets/8b55dd96-b776-47ee-a463-1411f3286e9c" />
-)
+![Priority Results](Priority%20Classification.png)
+
+---
 
 ## Confusion Matrix
 
-![Confusion Matrix](<img width="744" height="580" alt="Confusion matrix" src="https://github.com/user-attachments/assets/64a8ee37-1e94-4aab-9ea3-942a8f34d4af" />
-)
+![Confusion Matrix](Confusion%20matrix.png)
